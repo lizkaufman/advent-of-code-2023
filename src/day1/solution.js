@@ -24,6 +24,26 @@ const spelledOutDigits = {
     eight: 8,
     nine: 9,
 };
+const allDigitStrings = [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+];
 function calculateCalibrationValuePt2(line) {
     if (typeof line === "number") {
         return calculateCalibrationValue(line);
@@ -49,9 +69,6 @@ function calculateCalibrationValuePt2(line) {
             ? spelledOutDigits[string]
             : Number(string);
     });
-    if (orderedNumbers.length === 1) {
-        return Number(`${orderedNumbers[0]}${orderedNumbers[0]}`);
-    }
     return Number(`${orderedNumbers[0]}${orderedNumbers[orderedNumbers.length - 1]}`);
 }
 const testCases = [
