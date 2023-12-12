@@ -91,8 +91,6 @@ const possibleGames = testData.reduce(
   []
 );
 
-console.log(testData, possibleGames);
-
 const data = rawData.map((row) => formatData(row));
 
 const solutionPt1 = data
@@ -105,4 +103,15 @@ const solutionPt1 = data
   )
   .reduce((acc, cur) => acc + cur, 0);
 
-console.log({ solutionPt1 });
+// PART TWO
+
+function findPower({ red, blue, green }: CountedColors): number {
+  return red * blue * green;
+}
+
+const solutionPt2 = data.reduce(
+  (acc, { countedColors }) => acc + findPower(countedColors),
+  0
+);
+
+console.log({ solutionPt1, solutionPt2 });
